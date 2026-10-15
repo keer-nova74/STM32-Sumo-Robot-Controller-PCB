@@ -1,34 +1,19 @@
-# STM32 Sumo Robot Controller PCB
+# TSUMO_BOT_hardware
 
-## Overview
-A custom PCB design project for a sumo robot using an STM32 microcontroller. The board is intended to control DC motors and interface with sensors for autonomous robot movement.
+This repository contains the schematic and PCB designs for TSUMO_BOT a sumo robot (12x12cm), created in KiCad and manufactured by JLCPCB. The PCB is a 4-layer board, with an STM32L476RG microcontroller, two motor drivers TB6612FNG, an IR reciever TSP382, MOSFET circuit protection FDS6687, a 5V buck converter RT8259, a 3.3V regulator AMS1117, a 5V power mux TPS2116DRL and a USB-C connector with ESD protection (USBLC6).
 
-## Planned Features
-- STM32 microcontroller interface
-- Dual DC motor driver circuit
-- Infrared sensor interfaces
-- Battery power input
-- 5V and 3.3V power supply sections
-- Motor and sensor connectors
-- Programming and debugging interface
+![alt text](images/sumobot_schematic_1.png)
+![alt text](images/sumobot_schematic_2.png)
+![alt text](images/sumo_bot_pcb.png)
+![alt text](images/sumobot_pcb_physical.jpg)
+![alt text](images/sumobot_pcb_3d_2.png)
 
-## Design Tools
-- KiCad — schematic capture and PCB layout
+## Setup
 
-## Project Objectives
-- Develop a schematic for a robotics controller
-- Learn motor driver integration
-- Understand power distribution and grounding
-- Design a two-layer PCB
-- Perform electrical rule checks (ERC) and design rule checks (DRC)
+First clone the repo:
 
-## Project Status
-In Progress
+```
+git clone https://github.com/troyodia/TSUMO_BOT_hardware.git
+```
 
-## Future Work
-- Select and verify components
-- Complete the schematic
-- Assign component footprints
-- Design PCB placement and routing
-- Validate the design
-- Generate Gerber manufacturing files
+Import the project into KiCad 9.0 and make sure you have the "default global symbol library table" and the "default footprint library" available. KiCad should find the 3Dmodels and symbols under libs/ automatically. You must manually import the footprints under libs/footprints/ (select "file/add library" from the menu in the footprint editor and add them to the project).
